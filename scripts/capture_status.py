@@ -17,6 +17,8 @@ try:
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(viewport={"width": 1000, "height": 900}, device_scale_factor=1.5)
+        # Pin the screenshot to the deployed JSON, not a later live sample.
+        page.route("https://functions.yandexcloud.net/**", lambda route: route.fulfill(status=200, content_type="application/json", body=(root / "status.json").read_text(encoding="utf-8")))
         page.goto(f"http://127.0.0.1:{server.server_port}/", wait_until="networkidle")
         page.locator("#systems .service").first.wait_for(timeout=15000)
         page.locator('section[aria-labelledby="systems-title"]').screenshot(path=str(root / "status.png"))
