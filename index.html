@@ -9,12 +9,12 @@
 </head>
 <body>
   <main class="shell">
-    <header class="topbar"><a class="brand" href="./"><span class="brand-icon">◈</span> status<span class="brand-dot">.</span></a><span class="top-note">Обновление каждые 5 минут</span></header>
+    <header class="topbar"><a class="brand" href="./"><span class="brand-icon">◈</span> status<span class="brand-dot">.</span></a><span class="top-note">Текущий статус обновляется каждую минуту</span></header>
     <section class="panel" aria-labelledby="systems-title"><div class="panel-heading"><h1 id="systems-title">Состояние систем</h1><span id="history-range">Последние 90 проверок</span></div><div id="systems"></div><div class="legend"><span><i class="key ok"></i> Работает</span><span><i class="key warning"></i> Нестабильно</span><span><i class="key down"></i> Недоступно</span><span><i class="key unknown"></i> Нет данных</span></div></section>
     <section class="panel calendar-panel" aria-labelledby="calendar-title"><div class="panel-heading"><h2 id="calendar-title">Календарь событий</h2><div class="calendar-nav"><button id="month-prev" aria-label="Предыдущий месяц">‹</button><span id="month-label"></span><button id="month-next" aria-label="Следующий месяц">›</button></div></div><div class="weekdays" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div><div id="calendar" class="calendar"></div><p id="day-detail" class="day-detail">Выберите день, чтобы увидеть его состояние.</p></section>
     <section class="panel events-panel" aria-labelledby="events-title"><div class="panel-heading"><h2 id="events-title">История событий</h2><span>Из автоматических проверок</span></div><div id="events" class="events"></div></section>
     <footer><span>Последняя проверка: <time id="checked-at">—</time></span><span>Показаны только агрегированные данные. Доступность в вашей сети может отличаться.</span></footer>
   </main>
-  <script src="app.js?v=3" defer></script>
+  <script src="app.js?v=4" defer></script>
 </body>
 </html>
