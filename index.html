@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>Статус VPN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <span class="brand-mark" aria-hidden="true">●</span>
+      <span class="brand">Статус VPN</span>
+      <span class="refresh-note">Проверка каждые 5 минут</span>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">СОСТОЯНИЕ СЕРВИСОВ</p>
+      <h1 id="page-title">Как работают подключения</h1>
+      <p class="subtitle">Здесь видно состояние серверов и бесплатной подборки. Данные обновляются автоматически.</p>
+      <div id="overall" class="overall unknown" role="status" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="overall-text">Получаем последние данные…</span>
+      </div>
+      <p class="checked">Последняя проверка: <time id="checked-at">—</time></p>
+    </section>
+
+    <section class="cards" aria-label="Сервисы">
+      <article class="card" data-service="freeturn">
+        <div class="card-head"><span class="icon" aria-hidden="true">↗</span><span class="pill unknown">Нет данных</span></div>
+        <h2>FreeTurn</h2>
+        <p class="description">Ожидаем проверку сервера.</p>
+        <p class="detail">—</p>
+      </article>
+      <article class="card" data-service="mieru">
+        <div class="card-head"><span class="icon" aria-hidden="true">◆</span><span class="pill unknown">Нет данных</span></div>
+        <h2>Mieru</h2>
+        <p class="description">Ожидаем проверку сервера.</p>
+        <p class="detail">—</p>
+      </article>
+      <article class="card" data-service="free_pool">
+        <div class="card-head"><span class="icon" aria-hidden="true">✦</span><span class="pill unknown">Нет данных</span></div>
+        <h2>Бесплатная подборка</h2>
+        <p class="description">Ожидаем проверку пула.</p>
+        <p class="detail">—</p>
+      </article>
+    </section>
+
+    <aside class="note">
+      <h2>Что означает статус?</h2>
+      <p>Статус FreeTurn и Mieru показывает работу сервера и его сетевого порта. Подборка показывает число узлов, недавно подтверждённых проверками на двух серверах. Доступность отдельного узла в вашей сети может отличаться.</p>
+      <p>Если обновление задержалось больше 15 минут, мы покажем «Нет свежих данных» вместо старого зелёного статуса.</p>
+    </aside>
+    <footer>Страница не показывает данные клиентов, ключи и конфигурации.</footer>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
