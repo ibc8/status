@@ -60,7 +60,7 @@ def main() -> None:
     row = [sample_time] + [output["services"][service_id]["state"] for service_id in SERVICE_IDS]
     valid = [sample for sample in samples if isinstance(sample, list) and len(sample) == 4
              and isinstance(sample[0], int) and all(state in ALLOWED_STATES for state in sample[1:])
-             and bucket - 90 * 86400 <= sample[0] <= bucket]
+             and sample_time - 90 * 86400 <= sample[0] <= sample_time]
     by_time = {sample[0]: sample for sample in valid}
     by_time[sample_time] = row
     HISTORY_DESTINATION.write_text(json.dumps({"version": 1, "samples": [by_time[key] for key in sorted(by_time)]}, separators=(",", ":")), encoding="utf-8")
