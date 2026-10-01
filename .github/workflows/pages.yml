@@ -29,6 +29,11 @@ jobs:
           mkdir -p _site
           cp index.html style.css app.js _site/
           python3 scripts/prepare_status.py
+      - name: Capture compact status image
+        run: |
+          python3 -m pip install playwright==1.56.0
+          python3 -m playwright install --with-deps chromium
+          python3 scripts/capture_status.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
